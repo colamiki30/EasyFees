@@ -1,0 +1,2 @@
+# EasyFees
+Una semplice applicazione scritta interamente in Java che ti faciliterà il calcolo delle tariffe su eBay &amp; PayPal. Attenzione è necessario installare la JDK per il corretto funzionamento: https://www.oracle.com/java/technologies/javase-jdk14-downloads.html Per i possessori di Mac, per avviare l'applicazione, è necessario seguire questa semplice guida: avviare terminale --> scrivere java -jar PERCORSOFILEJAR (basta fare drag &amp; drop sulla finestra del terminale). In alternativa è possibile creare un semplice script su Automator .
