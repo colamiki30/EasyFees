@@ -4,8 +4,8 @@ Attenzione è necessario installare la JDK per il corretto funzionamento: https:
 Per i possessori di Mac (a causa delle ultime limitazionii imposte da Apple), per avviare l'applicazione, è necessario seguire questa semplice guida: 
 Avviare terminale --> digitare java -jar PERCORSOFILEJAR (basta fare drag & drop sulla finestra del terminale). 
 In alternativa è possibile creare un semplice script su Automator .
-E' possibile scaricare il file dell'ultima versione direttamente da qui: https://bit.ly/3cxZfHW
-
+E' possibile scaricare il file dell'ultima versione direttamente da qui: https://bit.ly/3005tNR
+L'ultima versione disponibile è la 1.0.1
 
 Resto a dispozione.
 Twitter --> @colamiki30    
