@@ -11,12 +11,18 @@ public class EasyFees implements ActionListener {
 	Container c = f.getContentPane();
 	JPanel p1 = new JPanel();
 	JPanel p2 = new JPanel();
+	JPanel p3 = new JPanel();
 	JButton b1 = new JButton("Tariffe eBay + PayPal");
 	JButton b2 = new JButton("Tariffe SOLO eBay");
 	JButton b3 = new JButton("Tariffe SOLO PayPal");
 	JLabel l1 = new JLabel("Sviluppato da Michele Coladangelo :)");
+	JLabel l2 = new JLabel("Versione 1.0");
 	JButton b4 = new JButton("Twitter");
 	JButton b5 = new JButton("Contatti");
+	
+	ImageIcon imageIcon;
+	
+	JLabel img = new JLabel();
 	
 	public EasyFees() {
 		p1.add(b1);
@@ -33,13 +39,22 @@ public class EasyFees implements ActionListener {
 		p2.add(l1);
 		l1.setHorizontalAlignment(SwingConstants.CENTER);
 	    l1.setFont(new Font("Verdana", Font.PLAIN, 15));
+	    p2.add(l2);
+	    l2.setHorizontalAlignment(SwingConstants.CENTER);
+		l2.setFont(new Font("Verdana",Font.PLAIN,15));
 		p2.add(b4);
 		b4.setForeground(Color.BLUE);
-
 		p2.add(b5);
 		b5.setForeground(Color.BLUE);
-		p2.setLayout(new GridLayout(3,1,20,20));
+		p2.setLayout(new GridLayout(4,1,10,10));
 		f.add(p2,BorderLayout.SOUTH);
+		
+		imageIcon = new ImageIcon(getClass().getClassLoader().getResource("easyfeeicon.png"));
+	    Image image = imageIcon.getImage();
+	    Image newimg = image.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+		img.setIcon(new ImageIcon(newimg));
+		p3.add(img);
+		f.add(p3,BorderLayout.NORTH);
 		
 		f.setSize(350,400);
 		f.setLocation(450,250);
@@ -68,7 +83,7 @@ public class EasyFees implements ActionListener {
 		
 		if(e.getSource()==b5) {
 			Desktop desktop = Desktop.getDesktop();
-			String message = "mailto:colamiki30@gmail.com?subject=Vorrei%20Dirti%20Qualcosa%20Riguardo%20EasyFees!";
+			String message = "mailto:colamiki30@gmail.com?subject=Vorrei%20Dirti%20Qualcosa%20Riguardo%20Ad%20EasyFees!";
 			URI uri = URI.create(message);
 			try {
 				desktop.mail(uri);

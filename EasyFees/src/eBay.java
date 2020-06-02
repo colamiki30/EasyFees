@@ -40,7 +40,7 @@ public class eBay implements ActionListener {
 		p1.add(l4);
 		l4.setHorizontalAlignment(SwingConstants.CENTER);
 		f.add(p1,BorderLayout.NORTH);
-		p1.setLayout(new GridLayout(4,2,20,20)); 
+		p1.setLayout(new GridLayout(6,2,2,2)); 
 		
 		
 		p2.add(t3);

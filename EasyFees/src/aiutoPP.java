@@ -8,6 +8,7 @@ public class aiutoPP implements ActionListener{
 	JPanel p1 = new JPanel();
 	JPanel p2 = new JPanel();
 	JLabel info2=new JLabel();
+	JLabel info3=new JLabel();
 	JButton b1 = new JButton("<< - Indietro - >>");
     
 	private Color color=Color.LIGHT_GRAY;
@@ -19,10 +20,12 @@ public class aiutoPP implements ActionListener{
 		p1.setBackground(color);
 		p1.setLayout(new GridLayout(5,1));
 
-		
 		info2.setText("Ricorda! Le tariffe PayPal ammontano al 3.4% del prezzo di vendita + 0.35€ fissi (solo per pagamenti in zona €).");
 		info2.setFont(new Font("Arial_Black",Font.PLAIN,20));
 		p1.add(info2);
+		info3.setText("In caso di inserimento del costo delle spese di spedizione, il programma calcolerà le tariffe relative a PayPal.");
+		info3.setFont(new Font("Arial_Black",Font.PLAIN,20));
+		p1.add(info3);
 		
 		p2.add(b1);
 		f.add(p2,BorderLayout.SOUTH);
