@@ -16,7 +16,7 @@ public class EasyFees implements ActionListener {
 	JButton b2 = new JButton("Tariffe SOLO eBay");
 	JButton b3 = new JButton("Tariffe SOLO PayPal");
 	JLabel l1 = new JLabel("Sviluppato da Michele Coladangelo :)");
-	JLabel l2 = new JLabel("Versione 1.0");
+	JLabel l2 = new JLabel("Versione 1.0.1");
 	JButton b4 = new JButton("Twitter");
 	JButton b5 = new JButton("Contatti");
 	

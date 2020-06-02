@@ -46,8 +46,7 @@ public class eBay implements ActionListener {
 		p2.add(t3);
 		imageIcon = new ImageIcon(getClass().getClassLoader().getResource("ebay.png"));
 	    Image image = imageIcon.getImage();
-	    Image newimg = image.getScaledInstance(75,50,java.awt.Image.SCALE_SMOOTH);
-		img.setIcon(new ImageIcon(newimg));
+		img.setIcon(new ImageIcon(image));
 		p2.add(img);
 		p2.add(t6);
 		f.add(p2,BorderLayout.WEST);

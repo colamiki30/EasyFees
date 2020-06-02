@@ -58,10 +58,9 @@ public class PayPal implements ActionListener {
 		
 		
 		p4.add(t4);
-		imageIcon = new ImageIcon(getClass().getClassLoader().getResource("pp.jpg"));
+		imageIcon = new ImageIcon(getClass().getClassLoader().getResource("pp.png"));
 	    Image image1 = imageIcon.getImage();
-	    Image newimg1 = image1.getScaledInstance(75,50,java.awt.Image.SCALE_SMOOTH);
-		img1.setIcon(new ImageIcon(newimg1));
+		img1.setIcon(new ImageIcon(image1));
 		p4.add(img1);
 		p4.add(t5);
 		f.add(p4,BorderLayout.EAST);
@@ -146,7 +145,15 @@ public class PayPal implements ActionListener {
 			t5.setText("");
 		}
 		
-		else {
+		if(b==true) {
+			message.setText("Per favore non inserire caratteri non ammessi nel field dedicato alle spese di spedizione!");
+			JOptionPane.showMessageDialog(null,message,"ATTENZIONE!",JOptionPane.WARNING_MESSAGE);
+			t2.setText("");
+			t4.setText("");
+			t5.setText("");
+			}
+		
+		if(a!=true) {
 			double pu=Double.parseDouble(p);
 			tot = (eBayFee*pu)/t; //percentuale di fee ebay (10%)
 			tot1 = pu-tot; //togliamo dal totale la percentuale calcolata es. 100€-10€=90€
@@ -169,14 +176,26 @@ public class PayPal implements ActionListener {
 				String fix1=String.format("%.2f",fin);
 				String fix2=String.format("%.2f",calc2);
 				String fix3 = String.format("%.2f",tot5);
-				t2.setText(fix3+"€");
+				t2.setText(fix1+"€");
 				t4.setText(fix1+"€");
 				t5.setText(fix2+"€");
 			}
+			
 			else {
-				t2.setText(totale+"€");
-				t4.setText(totalePP+"€");
-				t5.setText(feePP+"€");
+				double pup=Double.parseDouble(p);
+				tot = (eBayFee*pup)/t; //percentuale di fee ebay (10%)
+				tot1 = pup-tot; //togliamo dal totale la percentuale calcolata es. 100€-10€=90€
+				calcPP = (PPfee*pup)/t; //fee PP (3.4%)*val inserito, fratto 100
+				tot2 = pup-calcPP;
+				tot3 = calcPP+mustPP; //tariffa calc paypal
+				tt = tot2-mustPP;
+				tot4 = pup-tot3-tot;
+				System.out.println(tot3);
+				String tot3p=String.format("%.2f", tot3);
+				String ttp=String.format("%.2f", tt);
+				t2.setText(ttp+"€");
+				t4.setText(ttp+"€");
+				t5.setText(tot3p+"€");
 				}
 			}
 		

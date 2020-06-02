@@ -59,8 +59,7 @@ public class eBayPP implements ActionListener {
 		p2.add(t3);
 		imageIcon = new ImageIcon(getClass().getClassLoader().getResource("ebay.png"));
 	    Image image = imageIcon.getImage();
-	    Image newimg = image.getScaledInstance(75,50,java.awt.Image.SCALE_SMOOTH);
-		img.setIcon(new ImageIcon(newimg));
+		img.setIcon(new ImageIcon(image));
 		p2.add(img);
 		p2.add(t6);
 		f.add(p2,BorderLayout.WEST);
@@ -73,10 +72,9 @@ public class eBayPP implements ActionListener {
 		
 		
 		p4.add(t4);
-		imageIcon = new ImageIcon(getClass().getClassLoader().getResource("pp.jpg"));
+		imageIcon = new ImageIcon(getClass().getClassLoader().getResource("pp.png"));
 	    Image image1 = imageIcon.getImage();
-	    Image newimg1 = image1.getScaledInstance(75,50,java.awt.Image.SCALE_SMOOTH);
-		img1.setIcon(new ImageIcon(newimg1));
+		img1.setIcon(new ImageIcon(image1));
 		p4.add(img1);
 		p4.add(t5);
 		f.add(p4,BorderLayout.EAST);
@@ -165,7 +163,17 @@ public class eBayPP implements ActionListener {
 			t6.setText("");
 		}
 		
-		else {
+		if(b==true) {
+			message.setText("Per favore non inserire caratteri non ammessi nel field dedicato alle spese di spedizione!");
+			JOptionPane.showMessageDialog(null,message,"ATTENZIONE!",JOptionPane.WARNING_MESSAGE);
+			t2.setText("");
+			t3.setText("");
+			t4.setText("");
+			t5.setText("");
+			t6.setText("");
+			}
+		
+		if(a!=true) {
 			double pu=Double.parseDouble(p);
 			tot = (eBayFee*pu)/t; //percentuale di fee ebay (10%)
 			tot1 = pu-tot; //togliamo dal totale la percentuale calcolata es. 100€-10€=90€
@@ -205,15 +213,7 @@ public class eBayPP implements ActionListener {
 			}
 		
 		
-		if(b==true) {
-			message.setText("Per favore non inserire caratteri non ammessi nel field dedicato alle spese di spedizione!");
-			JOptionPane.showMessageDialog(null,message,"ATTENZIONE!",JOptionPane.WARNING_MESSAGE);
-			t2.setText("");
-			t3.setText("");
-			t4.setText("");
-			t5.setText("");
-			t6.setText("");
-			}
+		
 		}
 		
 		if(e.getSource()==b2) {
